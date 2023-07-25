@@ -1,5 +1,10 @@
 $colorMap: (
+  text-color-secondary: #fff,
+  text-color-info: rgb(138, 138, 138),
+  shadow: #ebe9e9,
   light: #ddd,
+  primary: #168bff,
+  warning: rgb(255, 26, 26),
 );
 
 @function color($key) {

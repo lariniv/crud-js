@@ -1,0 +1,63 @@
+@use '../../lib/service.scss' as s;
+
+.product {
+  display: flex;
+  flex-direction: column;
+  margin: s.space(4);
+  gap: s.space(10);
+
+  &__title {
+    color: s.color('primary');
+    font-size: 40px;
+    font-weight: 600;
+  }
+
+  &__list {
+    max-width: 1000px;
+    gap: s.space(4);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &-card {
+    max-width: 333px;
+    box-shadow: 0px 0px 10px 5px s.color('shadow');
+    border-radius: 8px;
+    padding: s.space(3);
+    display: flex;
+    flex-direction: column;
+    gap: s.space(5);
+
+    &-title {
+      font-size: 24px;
+    }
+
+    &-info {
+      font-size: 20px;
+      overflow-wrap: break-word;
+    }
+
+    &-id {
+      font-size: 20px;
+      color: s.color('text-color-info');
+    }
+
+    &-footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      &-price {
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      &-button {
+        font-size: 20px;
+        text-decoration: none;
+        color: s.color('primary');
+      }
+    }
+  }
+}

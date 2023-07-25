@@ -52,6 +52,59 @@ class User {
   }
 }
 
+class Product {
+  static #list = []
+
+  constructor(name, price, description) {
+    this.id = Math.trunc(Math.random() * 89999) + 10000
+    this.createDate = new Date().toISOString()
+    this.name = name
+    this.price = price
+    this.description = description
+  }
+
+  static getList = () => {
+    return this.#list
+  }
+
+  static add = (product) => {
+    this.#list.push(product)
+  }
+
+  static getById = (id) => {
+    return this.#list.find((user) => user.id === Number(id))
+  }
+
+  static updateById = (id, data) => {
+    const user = this.getById(id)
+    const { price, name, description } = data
+
+    if (user) {
+      if (price) {
+        user.price = price
+      }
+      if (name) {
+        user.name = name
+      }
+      if (description) {
+        user.description = description
+      }
+      return true
+    } else return false
+  }
+
+  static deleteById = (id) => {
+    const index = this.#list.findIndex(
+      (user) => user.id === Number(id),
+    )
+
+    if (index !== -1) {
+      this.#list.splice(index, 1)
+      return true
+    } else return false
+  }
+}
+
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -124,6 +177,95 @@ router.post('/user-update', function (req, res) {
     info: result
       ? 'Email succesfully updated'
       : 'Failed to update your email',
+  })
+})
+
+// ================================================================
+
+router.get('/product-create', function (req, res) {
+  res.render('product-create', {
+    style: 'product-create',
+  })
+})
+
+// ================================================================
+
+router.post('/product-create', function (req, res) {
+  let { name, price, description } = req.body
+
+  const product = new Product(name, price, description)
+
+  Product.add(product)
+
+  res.render('product-alert', {
+    style: 'product-alert',
+    info: 'Action completed',
+    description: 'Product was successfully created',
+  })
+})
+
+// ================================================================
+
+router.get('/product-list', function (req, res) {
+  const list = Product.getList()
+  res.render('product-list', {
+    style: 'product-list',
+
+    data: {
+      products: {
+        list,
+      },
+    },
+  })
+})
+
+// ================================================================
+
+router.get('/product-edit', function (req, res) {
+  const { id } = req.query
+  let product = Product.getById(id)
+  console.log(product.name, product, id)
+  res.render('product-edit', {
+    style: 'product-edit',
+    data: {
+      name: product.name,
+      price: product.price,
+      description: product.description,
+      id,
+    },
+  })
+})
+
+// ================================================================
+
+router.post('/product-edit', function (req, res) {
+  const data = req.body
+  const { id } = req.body
+
+  const result = Product.updateById(id, data)
+
+  res.render('product-alert', {
+    style: 'product-alert',
+    info: 'Action completed',
+    description: result
+      ? 'Operation succesfull'
+      : 'Failed to update',
+  })
+})
+
+// ================================================================
+
+router.get('/product-delete', function (req, res) {
+  const { id } = req.query
+
+  const result = Product.deleteById(id)
+
+  res.render('product-alert', {
+    style: 'product-alert',
+    info: 'Action completed',
+    description: result
+      ? 'Operation succesfull'
+      : 'Failed to update',
   })
 })
 // Підключаємо роутер до бек-енду
