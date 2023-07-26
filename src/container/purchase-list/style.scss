@@ -1,0 +1,46 @@
+@use '../../lib/service.scss' as s;
+
+@use '../../component/heading/style.scss' as heading;
+@use '../../component/divider/style.scss' as divider;
+
+.main {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: s.space(3);
+  padding: s.space(10);
+}
+
+.order-link {
+  text-decoration: none;
+}
+
+.order {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: s.space(2);
+  align-items: center;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: s.space(3);
+  }
+
+  &__label {
+    color: darkgray;
+  }
+
+  &__text {
+    font-weight: bold;
+  }
+}
+
+.heading__title {
+  color: s.color('primary');
+  font-weight: bold;
+  font-size: 28px;
+}

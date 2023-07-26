@@ -1,0 +1,24 @@
+<main class='main'>
+  {{>heading title="Edit"}}
+  <form method="GET" action="/purchase-list" class="block">
+    {{#with data}}
+    {{>field label="ID:" name="id" value=id read=true}}
+
+    {{>divider}}
+
+    {{>field label="Name" name="name" value=name }}
+
+    {{>field label="Lastname" name="lastname" value=lastname }}
+
+    {{>divider}}
+
+    {{>field label="Phone" name="phone" value=phone }}
+
+    {{>field label="Email" name="email" value=email }}
+
+    {{>divider}}
+
+    {{>button text="Submit"}}
+    {{/with}}
+  </form>
+</main>

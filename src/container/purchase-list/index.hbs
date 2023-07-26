@@ -1,0 +1,29 @@
+<main class='main'>
+  {{> heading title="My orders"}}
+
+  {{#each data.orders}}
+  <form method="POST" class="order-link" action="/purchase-info?id={{id}}">
+    <button type="submit" class="order">
+      <div class="order__block">
+        <span class="order__label">ID: {{id}}</span>
+      </div>
+
+      <div class="order__block">
+        <div class="order__label">Product</div>
+        <div class="order__text">{{product.title}}</div>
+      </div>
+
+      <div class="order__block">
+        <div class="order__label">Money paid</div>
+        <div class="order__text">{{totalPrice}}$</div>
+      </div>
+
+      <div class="order__block">
+        <div class="order__label">Bonuses</div>
+        <div class="order__text">{{bonus}}$</div>
+      </div>
+    </button>
+  </form>
+  {{> divider}}
+  {{/each}}
+</main>

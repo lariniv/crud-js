@@ -1,0 +1,36 @@
+@use '../../lib/service.scss' as s;
+
+main {
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: s.space(4);
+  box-shadow: 0px 0px 10px 5px #ebe9e9;
+  padding: s.space(4);
+  border-radius: 4px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: s.space(2);
+
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
+
+  a {
+    display: block;
+    background-color: s.color('primary');
+    padding: s.space(2) s.space(7) s.space(2) s.space(7);
+    border-radius: 4px;
+    text-decoration: none;
+    color: s.color('text-color-secondary');
+  }
+}

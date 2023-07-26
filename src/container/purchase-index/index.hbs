@@ -1,0 +1,9 @@
+<main class='main'>
+  {{> heading title="Products" info="Pc's and laptops"}}
+
+  <div class="product-list">
+    {{#each data.list}}
+      {{> purchase-product data=this}}
+    {{/each}}
+  </div>
+</main>

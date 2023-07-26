@@ -1,0 +1,47 @@
+<main class='main'>
+  {{#with data}}
+  <form method="POST" action="/purchase-submit?id={{id}}" class="form-card">
+    {{> heading title="Your order"}}
+
+    <ul class="cart">
+      {{#each cart}}
+      <li class="cart-item">
+        <span>{{text}}</span>
+        <span>{{price}}$</span>
+      </li>
+      {{/each}}
+    </ul>
+
+    {{>divider}}
+
+    {{>heading title="Credentials"}}
+
+    {{>field label="Name" name="firstname"}}
+
+    {{>field label="Surname" name="lastname"}}
+
+    {{>field label="Phone" name="phone"}}
+
+    {{>field label="Email" name="email"}}
+
+    {{>field label="Comments" name="comment"}}
+
+    {{>field label="Redeem bonuses" name="bonus"}}
+
+    {{>field label="Redeem promo-code" name="promocode"}}
+
+    {{> divider}}
+
+    <strong class="form-card__total">
+      In total: {{totalPrice}}$ ({{bonus}}$ to bonus balance)
+    </strong>
+
+    {{>field value=totalPrice name="totalPrice" disabled=true}}
+    {{>field value=productPrice name="productPrice" disabled=true}}
+    {{>field value=deliveryPrice name="deliveryPrice" disabled=true}}
+    {{>field value=amount name="amount" disabled=true}}
+
+    {{> button text="Submit"}}
+  </form>
+  {{/with}}
+</main>

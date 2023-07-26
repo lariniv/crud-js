@@ -1,0 +1,32 @@
+<main class='main'>
+  {{>heading title="Purchase info"}}
+  <form method="POST" action="/purchase-edit?id={{data.id}}" class="block">
+    {{#with data}}
+    {{>field label="ID:" name="id" value=id read=true}}
+
+    {{>divider}}
+
+    {{>field label="Name" name="name" value=name read=true}}
+
+    {{>field label="Lastname" name="lastname" value=lastname read=true}}
+
+    {{>field label="Phone" name="phone" value=phone read=true}}
+
+    {{>field label="Email" name="email" value=email read=true}}
+
+    {{>divider}}
+
+    {{>field label="Product name" name="product" value=product read=true}}
+
+    {{>field label="Bonus" name="bonus" value=bonus read=true}}
+
+    {{>field label="Delivery" name="delivery" value=delivery read=true}}
+
+    {{>field label="Total Price" name="totalPrice" value=totalPrice read=true}}
+
+    {{>divider}}
+
+    {{>button text="Edit purchase"}}
+    {{/with}}
+  </form>
+</main>

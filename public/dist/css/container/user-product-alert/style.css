@@ -1,0 +1,38 @@
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 500px;
+  max-width: 850px;
+  gap: 16px;
+  margin: 16px;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0px 0px 10px 5px #ebe9e9;
+}
+main div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+main div h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+main div div {
+  font-weight: 500;
+  font-size: 16px;
+}
+main a {
+  display: block;
+  text-decoration: none;
+  height: fit-content;
+  padding: 8px;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  background-color: #168bff;
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */
