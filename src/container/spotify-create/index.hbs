@@ -4,17 +4,20 @@
 }}
 
 <main class='main'>
-  {{#with data}}
   <div class="main__content">
     <header class="header">
-      <a href="{{link}}">
-        <img src="/img/svg/cross-back.svg"></a>
+      <a href="/">
+        <img src="/img/svg/cross-back.svg">
+      </a>
     </header>
-    <h1 class="title title--center">{{title}}</h1>
-    <p class="text">{{text}}</p>
+    <h1 class="title title--center title--small">Playlist name</h1>
 
+    <form method="POST" action="/spotify-create{{#if data.isMix}}?isMix=true{{/if}}" class="form">
+      <input type="text" class="form__field" placeholder="Name" name="name" required>
+
+      <button class="form__button">Create</button>
+    </form>
   </div>
-  {{/with}}
 </main>
 
 {{!

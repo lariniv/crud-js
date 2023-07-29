@@ -1,0 +1,60 @@
+@use '../../lib/spotifyService.scss' as s;
+@use '../../lib/spotify.scss' as spotify;
+.main__content {
+  max-width: 720px;
+}
+
+.header {
+  max-width: 720px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 56px 56px;
+  gap: s.space(4);
+  align-items: center;
+}
+
+.title {
+  font-size: 40px;
+}
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+  gap: s.space(7);
+  align-items: center;
+
+  &__image {
+    height: 345px;
+    width: 345px;
+  }
+
+  &__track {
+    max-width: 720px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  &__list {
+    display: grid;
+    gap: s.space(7);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: s.space(2);
+  }
+
+  &__name {
+    font-size: 24px;
+    color: s.color('white');
+  }
+
+  &__amount {
+    font-size: 16px;
+    color: s.color('gray');
+  }
+}

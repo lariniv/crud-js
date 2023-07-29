@@ -85,17 +85,21 @@ a:hover {
   font-size: 16px;
 }
 
-.title--small {
-  font-size: 16px;
+.search {
+  background-color: #292929;
+  padding: 8px 32px;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 32px;
+  font-size: 24px;
 }
-
-.header {
-  display: flex;
-  justify-content: flex-end;
+.search__button {
+  color: #fff;
+  transition: opacity 0.7s;
 }
-
-.text {
-  text-align: center;
+.search__button:hover {
+  opacity: 0.7;
 }
 
 /*# sourceMappingURL=style.css.map */

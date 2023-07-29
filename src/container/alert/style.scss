@@ -1,0 +1,15 @@
+@use '../../lib/spotifyService.scss' as s;
+@use '../../lib/spotify.scss' as spotify;
+
+.title--small {
+  font-size: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.text {
+  text-align: center;
+}

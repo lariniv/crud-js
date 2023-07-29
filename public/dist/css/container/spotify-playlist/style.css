@@ -85,17 +85,17 @@ a:hover {
   font-size: 16px;
 }
 
-.title--small {
-  font-size: 16px;
+.add-button {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  align-items: center;
+  gap: 24px;
+  font-size: 18px;
 }
 
 .header {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.text {
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 40px;
 }
 
 /*# sourceMappingURL=style.css.map */
